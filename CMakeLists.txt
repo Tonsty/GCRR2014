@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+project(GCRR2014)
+find_package(PCL 1.3 REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DRS})
+add_definitions(${PCL_DEFINITIONS})
+add_executable(GCRR2014 main.cpp gcrr2014.cpp gcrr2014.h lbfgs.c lbfgs.h arithmetic_ansi.h arithmetic_sse_double.h arithmetic_sse_float.h)
+target_link_libraries(GCRR2014 ${PCL_LIBRARIES})
